@@ -6,9 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.controllers.HomeController;
+import br.com.casadocodigo.loja.daos.ProdutoDAO;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class})
+@ComponentScan(basePackageClasses={HomeController.class,ProdutoDAO.class})
 public class AppWebConfiguration {
 	
 	
@@ -19,8 +20,6 @@ public class AppWebConfiguration {
 	    resolver.setSuffix(".jsp");
 	    return resolver;
 	}
-
-	
 
 }
 
