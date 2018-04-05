@@ -10,9 +10,9 @@ import br.com.casadocodigo.loja.models.Produto;
 @Controller
 public class ProdutosController {
 	
-	@Autowired
-	private ProdutoDAO produtoDao;
 	
+	@Autowired
+    private ProdutoDAO produtoDao;
 
     @RequestMapping("/form")
     public String form(){
@@ -21,7 +21,7 @@ public class ProdutosController {
     
     @RequestMapping("/produtos")
     public String gravar(Produto produto){
-        System.out.println(produto);
+    	produtoDao.gravar(produto);
         return "/produtos/PersistOk";
     }
 }
